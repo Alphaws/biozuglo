@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+docker run -it --rm \
+  --network host \
+  --hostname node \
+  --expose 8000 \
+  --volume .:/app \
+  --volume ./bin/init.sh:/tmp/init.sh \
+  --workdir /app \
+  node:20 \
+  /bin/bash /tmp/init.sh
+
+docker-compose up -d

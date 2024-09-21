@@ -1,7 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Ripple } from "primeng/ripple";
 import { StyleClassModule } from "primeng/styleclass";
 import { Router, RouterLink } from "@angular/router";
+import { ButtonDirective } from "primeng/button";
+import { ConfigService } from "../../services/config.service";
 
 @Component({
   selector: 'app-header',
@@ -9,12 +11,22 @@ import { Router, RouterLink } from "@angular/router";
   imports: [
     Ripple,
     StyleClassModule,
-    RouterLink
+    RouterLink,
+    ButtonDirective
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   router: any = inject(Router);
+  configService = inject(ConfigService);
+
+  config: any = [];
+
+  constructor() {}
+
+  ngOnInit() {
+    this.config = this.configService.getConfig();
+  }
 
 }

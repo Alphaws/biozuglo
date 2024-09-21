@@ -11,7 +11,7 @@ export class ApiService {
 
   router = inject(Router);
   httpClient = inject(HttpClient);
-  private baseUrl = environment.apiUrl; //'https://api.yourshop.com';  // API URL
+  private baseUrl = environment.apiUrl;
 
   constructor() { }
 

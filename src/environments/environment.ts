@@ -1,3 +1,4 @@
 export const environment = {
-  apiUrl: 'https://api.prstart.hu'
+  production: true,
+  apiUrl: 'https://api.sephir.hu'
 };

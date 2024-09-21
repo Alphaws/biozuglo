@@ -4,6 +4,8 @@ import { HomeComponent } from "./components/home/home.component";
 import { ProductDetailComponent } from "./components/product-detail/product-detail.component";
 import { CartComponent } from "./components/cart/cart.component";
 import { LayoutComponent } from "./layout/layout.component";
+import { ErrorComponent } from "./components/error/error.component";
+import { BlogModule } from "./components/blog/blog.module";
 
 export const routes: Routes = [
   { path: '', component: LayoutComponent, children: [
@@ -11,7 +13,9 @@ export const routes: Routes = [
       { path: 'shop', component: ProductListComponent },
       { path: 'product/:id', component: ProductDetailComponent },
       { path: 'cart', component: CartComponent },
-      { path: '**', redirectTo: '' }
+      { path: 'blog', loadChildren: () => import('./components/blog/blog.module').then(m => BlogModule) },
+      { path: 'error', component: ErrorComponent},
+      { path: '**', redirectTo: 'error' }
     ]}
 
 

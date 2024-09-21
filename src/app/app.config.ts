@@ -11,9 +11,11 @@ import { provideAnimations } from "@angular/platform-browser/animations";
 import { provideHttpClient, withInterceptors } from "@angular/common/http";
 import { apiInterceptor } from "./interceptors/api.interceptor";
 import { authInterceptor } from "./interceptors/auth.interceptor";
+import { provideAppInitializer } from "./app.initializer";
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideAppInitializer(),
     provideZoneChangeDetection({eventCoalescing: true}),
     provideRouter(
         routes,
