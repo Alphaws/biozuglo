@@ -2,8 +2,9 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Ripple } from "primeng/ripple";
 import { StyleClassModule } from "primeng/styleclass";
 import { Router, RouterLink } from "@angular/router";
-import { ButtonDirective } from "primeng/button";
+import { Button, ButtonDirective } from "primeng/button";
 import { ConfigService } from "../../services/config.service";
+import { BadgeModule } from "primeng/badge";
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,9 @@ import { ConfigService } from "../../services/config.service";
     Ripple,
     StyleClassModule,
     RouterLink,
-    ButtonDirective
+    ButtonDirective,
+    BadgeModule,
+    Button
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -22,6 +25,7 @@ export class HeaderComponent implements OnInit {
   configService = inject(ConfigService);
 
   config: any = [];
+  cartSize: number = 0;
 
   constructor() {}
 
