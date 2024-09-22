@@ -3,13 +3,13 @@
 		{
 			"id": "1000",
 			"code": "f230fh0g3",
-			"name": "Bamboo Watch",
+			"name": "Wernards CBD OK 7%",
 			"description": "Product Description",
 			"image": "bamboo-watch.jpg",
 			"price": 65,
-			"category": "Accessories",
+			"category": "CBD Olaj",
 			"quantity": 24,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "RAKTÁRON",
 			"rating": 5
 		},
 		{

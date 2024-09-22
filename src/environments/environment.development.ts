@@ -1,4 +1,5 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://ald-backend.localhost'
+  apiUrl: 'https://ald-backend.localhost',
+  channelName: 'biozuglo.hu'
 };

@@ -27,7 +27,8 @@ export class AppComponent implements AfterViewInit {
           en: {
             consentModal: {
               title: 'Sütiket használunk',
-              description: 'Cookie modal description',
+              description: 'Kedves Látogató! Tájékoztatjuk, hogy a honlap felhasználói élmény fokozásának érdekében sütiket alkalmazunk.' +
+                  ' A honlapunk használatával ön a tájékoztatásunkat tudomásul veszi.',
               acceptAllBtn: 'Összes elfogadása',
               acceptNecessaryBtn: 'Összes elutasítása',
               showPreferencesBtn: 'Sütik kezelése'

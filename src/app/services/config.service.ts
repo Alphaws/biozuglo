@@ -17,7 +17,7 @@ export class ConfigService {
   constructor() { }
 
   loadConfig(): Observable<any> {
-    return this.httpClient.get(`${this.baseUrl}/shop-api/config`);
+    return this.httpClient.get(`${this.baseUrl}/shop-api/config`,{withCredentials:true});
   }
 
   setConfig(config: any): void {

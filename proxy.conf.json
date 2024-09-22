@@ -1,0 +1,6 @@
+{
+  "/": {
+    "target": "https://ald-backend.localhost/",
+    "secure": false
+  }
+}

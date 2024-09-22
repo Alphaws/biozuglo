@@ -17,3 +17,41 @@
         <img src="image1.png" alt="Hero Image" class="w-9">
     </div>
 </div>
+
+<div class="grid">
+    <div class="col-12">
+        <div class="card">
+            <p-dataView #dv [value]="products" [paginator]="true"
+                        [rows]="9" filterBy="name" [sortField]="sortField" [sortOrder]="sortOrder" layout="grid">
+
+                <ng-template let-products pTemplate="gridItem">
+                    <div class="grid grid-nogutter">
+                        <div class="col-12 md:col-4" *ngFor="let product of products">
+                            <div class="card m-3 border-1 surface-border">
+                                <div class="flex flex-wrap gap-2 align-items-center justify-content-between mb-2">
+                                    <div class="flex align-items-center">
+                                        <i class="pi pi-tag mr-2"></i>
+                                        <span class="font-semibold">{{product.category}}</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-column align-items-center text-center mb-3">
+                                    <img [src]="'assets/demo/images/product/' + product.image"
+                                         [alt]="product.name" class="w-9 shadow-2 my-3 mx-0"/>
+                                    <div class="text-2xl font-bold">{{product.name}}</div>
+                                    <div class="mb-3">{{product.description}}</div>
+
+                                </div>
+                                <div class="flex align-items-center justify-content-between">
+                                    <span class="text-2xl font-semibold">{{product.price}} €</span>
+                                    <p-button icon="pi pi-shopping-cart"
+                                              (click)="addToCart(product.id)"
+                                              [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-dataView>
+        </div>
+    </div>
+</div>
