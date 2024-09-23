@@ -12,6 +12,8 @@ function appInitializer(
   console.log('INIT APP');
   return async () => {
     const cookie = await firstValueFrom(authService.getCSRFToken());
+    //const token = await firstValueFrom(authService.authApp());
+    console.log(cookie);
     const config = await firstValueFrom(configService.loadConfig());
     configService.setConfig(config);
   };

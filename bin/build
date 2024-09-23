@@ -10,4 +10,4 @@ docker run -it --rm \
   node:20 \
   /bin/bash /tmp/init.sh
 
-docker-compose up -d
+docker compose up -d

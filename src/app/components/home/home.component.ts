@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
         "id": "1000",
         "code": "f230fh0g3",
         "name": "Wernards CBD OK 7%",
-        "description": "Full spectrum CBD oil ",
+        "description": "Full spectrum CBD olaj",
         "image": "CBDOK7_5ml-300x300.webp",
         "price": 14,
         "category": "CBD olaj",

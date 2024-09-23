@@ -4,9 +4,9 @@
     <div class="mx-4 md:mx-8 mt-0 md:mt-4">
         <h1 class="text-6xl font-bold text-gray-900 line-height-2">
             <span class="font-light block">Üdvözöljük a </span>Biozuglo.hu-n!</h1>
-        <p class="font-normal text-2xl line-height-3 md:mt-3 text-gray-700">
+        <h2 class="font-normal text-2xl line-height-3 md:mt-3 text-gray-700">
             Fedezze fel a természet erejét CBD termékeink segítségével! Webshopunkban széles választékban
-            kínálunk kiváló minőségű CBD olajokat, krémeket és egyéb wellness termékeket </p>
+            kínálunk kiváló minőségű CBD olajokat, krémeket és egyéb wellness termékeket </h2>
         <button pButton pRipple type="button"
                 label="Termékeink"
                 (click)="router.navigate(['/shop'])"
@@ -21,8 +21,12 @@
 <div class="grid">
     <div class="col-12">
         <div class="card">
-            <p-dataView #dv [value]="products" [paginator]="true"
-                        [rows]="9" filterBy="name" [sortField]="sortField" [sortOrder]="sortOrder" layout="grid">
+            <p-dataView #dv [value]="products"
+                        [paginator]="true"
+                        [rows]="9" filterBy="name"
+                        [sortField]="sortField"
+                        [sortOrder]="sortOrder"
+                        layout="grid">
 
                 <ng-template let-products pTemplate="gridItem">
                     <div class="grid grid-nogutter">
@@ -46,6 +50,8 @@
                                     <p-button icon="pi pi-shopping-cart"
                                               (click)="addToCart(product.id)"
                                               [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
+                                    <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
+
                                 </div>
                             </div>
                         </div>

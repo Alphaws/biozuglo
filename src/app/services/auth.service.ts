@@ -14,7 +14,20 @@ export class AuthService {
   constructor() { }
 
   getCSRFToken(): Observable<any> {
-    return this.httpClient.get(`${this.baseUrl}/sanctum/csrf-cookie`);
+    return this.httpClient.get(`${this.baseUrl}/sanctum/csrf-cookie`, {withCredentials: true})
+    //     .subscribe({
+    //   next: (resp: any) => {
+    //     console.log(resp);
+    //   }
+    // });
 
+  }
+
+  authApp() {
+    // return this.httpClient.post(`${this.baseUrl}/sanctum/token`, {
+    //   email: 'user@example.com',
+    //   password: 'password',
+    //   device_name: 'biozuglo_app',
+    // });
   }
 }
